@@ -446,8 +446,8 @@ footer svg {
         font-size: 1.5em; /* Smaller font sizes for headings */
     }
     
-    .about {
-        width: 100%;
+    .about img{
+        width: 100vh;
         margin-top:-2.5%;
         overflow-x:hidden;
     }
