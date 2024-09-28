@@ -29,7 +29,23 @@
       document.getElementById("popup").style.display = "none";
       document.getElementById("popup-overlay").style.display = "none";
     }
-  
+
+  // Fungsi untuk mengganti gambar saat layar lebih kecil dari 768px
+function updateImageSrc() {
+  var img = document.getElementById('responsiveImage');
+  if (window.innerWidth <= 768) {
+      img.src = 'img/wiv.svg'; // Gambar untuk layar kecil
+  } else {
+      img.src = 'img/wave.svg'; // Gambar default untuk layar besar
+  }
+}
+
+// Panggil fungsi ketika halaman pertama kali dimuat
+updateImageSrc();
+
+// Panggil fungsi setiap kali ukuran layar berubah
+window.addEventListener('resize', updateImageSrc);
+
     // Efek parallax saat scroll
     window.addEventListener('scroll', function() {
       const header = document.querySelector('.header');
