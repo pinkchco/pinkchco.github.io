@@ -447,9 +447,9 @@ footer svg {
     }
     
     .about img{
-        width: 100vh;
+        overflow-x: hidden;
+        height: auto;
         margin-top:-2.5%;
-        overflow-x:hidden;
     }
 
     .about-image img {
