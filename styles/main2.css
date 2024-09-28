@@ -1,0 +1,581 @@
+body, html {
+    animation: fadeIn 2s ease-in forwards; /* Fade in saat halaman terbuka */
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    margin-left: -1%;
+}
+
+
+.header {
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background-color: #000000;
+    z-index: 1;
+    overflow: hidden; /* Tambahkan ini untuk memastikan elemen header tidak mengganggu elemen lain */
+}
+
+.background-video {
+    position: absolute;
+    top: -6%;
+    width: 70%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overlay {
+    position: relative;
+    z-index: 2;
+    opacity: 0; /* Mulai dengan opacity 0 untuk efek fade-in */
+    transform: translateY(-20px); /* Awali dari posisi sedikit ke atas */
+    animation: fadeInText 1s ease-out forwards; /* Animasi fade-in */
+}
+
+@keyframes fadeInText {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.overlay-color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    background-color: rgba(67, 72, 75, 0.5); /* Ubah ini sesuai keinginan */
+    z-index: 0; /* Pastikan berada di atas video tetapi di bawah overlay konten */
+}
+
+
+h1 {
+    font-size: 48px;
+    margin: 0;
+    z-index: 3;
+}
+
+p {
+    margin-bottom: 30px;
+    margin-top: 0;
+    font-size: 20px;
+    z-index: 3;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #1c86c8;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative; 
+    z-index: 4; /* Pastikan tombol di atas elemen lainnya */
+}
+
+.btn:hover {
+    background-color: #ff64b1;
+    transform: translateY(-5px);
+}
+
+/* Efek melengkung di bawah */
+.custom-shape-divider-bottom {
+    position: absolute;
+    bottom: -13%; /* Menempatkan SVG di bagian bawah header */
+    left: 0;
+    right: 0; /* Memastikan SVG mengisi seluruh lebar */
+    z-index: 1; /* Di atas video, tetapi di bawah overlay */
+}
+
+/* Efek slide-in dari bawah */
+.slide-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.slide-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about {
+    position: absolute;
+    top: 100%; /* Menempatkan SVG di bagian bawah header */
+    left: -2%;
+    right: 0; /* Memastikan SVG mengisi seluruh lebar */
+    z-index: 0;
+}
+
+.about-image {
+    float: left; /* Agar gambar berada di kiri teks */
+    margin-right: 20px; /* Memberi jarak antara gambar dan teks */
+    z-index: 5;
+    object-fit: cover;
+    position: relative;
+    margin-top: -5%;
+    margin-left: 8%;
+}
+
+.about-image img {
+    width: 140px; /* Atur lebar gambar sesuai keinginan */
+    height: auto; /* Pertahankan aspek rasio */
+    display: block; /* Pastikan gambar terlihat */
+    z-index: 5;
+}
+
+.ari {
+    text-align: right; /* Geser teks ke kanan */
+    padding: 40px;
+    max-width: 95%;
+    margin-top: -14%;
+    margin-left: auto;
+    margin-right: 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* Section di bawah kurva */
+section {
+    padding-top: 70px;
+    background-color: #e9f7fd; 
+}
+
+.about-header {
+    position: relative; /* Menjaga posisi relatif untuk pengaturan transform */
+}
+
+#head {
+    margin-top: 1%; 
+    margin-left: 8%;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+
+section h2 {
+    font-size: 50px;
+    margin-left: 8%;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+
+section h3 {
+    font-size: 36px;
+    margin-left: 8%;
+    margin-bottom: 3.5%;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+
+section h4 {
+    font-size: 18px;
+    margin-left: 8%;
+    margin-top: -3%;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+
+section p {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 0 auto;
+    text-align: right; /* Paragraf di sebelah kanan */
+}
+
+#invitation p {
+    width: 83%;
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 10px;
+    justify-content: center;
+    text-align: justify; /* Paragraf di sebelah kanan */
+}
+
+#invitation h3 {
+    margin-bottom: -1%;
+}
+
+.favorite-header {
+    display: flex; /* Mengaktifkan flexbox */
+    align-items: center; /* Menjaga item tetap sejajar secara vertikal */
+}
+
+.favorite-header img {
+    margin-left: 8%;
+    margin-right: 1%;
+    margin-top: 1%;
+}
+
+.favorite-header h3{
+    margin-left: 0;
+}
+
+.favorite-header h4 {
+    margin-left: 0;
+}
+
+.fav-icon {
+    height: 80px; /* Mengatur tinggi gambar */
+    width: auto; /* Memastikan proporsi gambar tetap terjaga */
+}
+
+.favorite-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 50px;
+    overflow: hidden; /* Mencegah overflow di kontainer */
+}
+
+.flip-box {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+    border-radius: 15px;
+    overflow: hidden; /* Mencegah overflow dalam kotak flip */
+}
+
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-box-front {
+    color: black;
+    font-size: 18px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.flip-box-back {
+    background-color: #8ED1FC;
+    transform: rotateY(180deg);
+    border-radius: 15px;
+}
+
+.flip-box-back img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.cake-container {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+#birthday-cake{
+    width: 40%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+#gift-box {
+    cursor: pointer;
+    margin-left: 40%;
+    margin-top: -2%;
+    transition: transform 0.3s ease-in-out;
+    justify-content: center;
+    padding-bottom: 10%;
+}
+
+/* Efek saat di-hover: gambar cake membesar */
+#birthday-cake:hover, #gift-box:hover{
+    transform: scale(1.1); /* Hanya memperbesar tanpa rotasi */
+}
+
+/* Popup Styles */
+.overlay-background {
+    display: none; /* Secara default tidak ditampilkan */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Warna hitam dengan transparansi */
+    z-index: 9; /* Di bawah popup tetapi di atas konten lainnya */
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    text-align: center;
+    z-index: 10;
+}
+
+/* Container untuk gambar bergerak */
+.moving-container {
+    width: 400px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Gambar yang bergerak */
+.gift-moving {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    height: 100%;
+    animation: moveLeftToRight 10s linear infinite;
+}
+
+/* Keyframes untuk animasi bergerak dari kanan ke kiri lalu muncul lagi dari kiri */
+@keyframes moveLeftToRight {
+    0% { left: -80%; }       /* Mulai dari luar kiri */
+    50% { left: 100%; }       /* Hilang ke sisi kanan */
+    100% { left: 100%; } 
+}
+
+/* Gaya untuk tombol di popup */
+.popup button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin-bottom: 5%;
+    background-color: #007BFF; /* Warna latar belakang tombol */
+    color: white;              /* Warna teks */
+    padding: 10px 20px;       /* Ruang di sekitar teks */
+    border: none;              /* Menghilangkan border default */
+    border-radius: 5px;       /* Sudut membulat */
+    cursor: pointer;           /* Mengubah kursor saat hover */
+    font-size: 16px;           /* Ukuran font */
+    transition: background-color 0.3s ease; /* Efek transisi saat hover */
+}
+
+/* Efek hover untuk tombol */
+.popup button:hover {
+    background-color: #0056b3; /* Warna latar belakang saat hover */
+}
+
+
+footer {
+    position: relative;
+    width: 100%; /* Sesuaikan ke 100% untuk menghindari tumpang tindih */
+    height: auto;
+    bottom: 0;
+    text-align: center;
+    color: #ffffff;
+    z-index: 1;
+}
+
+.footer-content {
+    position: relative;
+    top: -30px; /* Atur posisi konten lebih dekat dengan bagian atas */
+    z-index: 2;
+    text-align: center;
+    color: #ff64b1;
+}
+
+.footer-svg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 0; /* SVG di belakang semua konten */
+    pointer-events: none; /* SVG tidak akan mengganggu interaksi dengan elemen lainnya */
+}
+
+footer svg {
+    display: block;
+    margin: 0 auto;
+    bottom: 0;
+    pointer-events: none; /* Tambahkan pointer-events none di SVG */
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    .background-video {
+        top: 2%;
+    }
+
+    .overlay-color {
+        height: 100%;
+    }
+
+    h1 {
+        font-size: 2em; /* Smaller font size for h1 */
+    }
+    
+    h2, h3, h4 {
+        font-size: 1.5em; /* Smaller font sizes for headings */
+    }
+    
+    .about {
+        margin-top:-2.5%;
+    }
+
+    .about-image img {
+        width: 100px; /* Smaller images for mobile */
+    }
+    
+    .ari {
+        margin-top:100px; 
+        padding: 20px; /* Reduced padding */
+    }
+
+    .ari p {
+        display: inline; /* Change display to inline to combine text */
+    }
+    
+    .favorite-container {
+        gap: 20px; /* Reduce gap between items */
+    }
+    
+    .flip-box {
+        width: 45%; /* Make flip boxes take more width */
+    }
+
+    .btn {
+        padding: 10px 20px; /* Adjust button padding */
+    }
+    
+    #gift-box {
+        margin-left: 20%; /* Adjust margin */
+        margin-top: -10%; /* Adjust margin */
+    }
+
+    .footer-content {
+        font-size: 14px; /* Smaller font size for mobile */
+        padding: 8px 0; /* Reduced padding */
+    }
+    
+    footer {
+        padding: 15px 0; /* Adjust padding for mobile */
+    }
+
+    .popup {
+        padding: 15px; /* Reduce padding on mobile */
+        width: 50%; /* Full width on mobile */
+        max-width: none; /* Remove max width constraint */
+    }
+
+    .moving-container{
+        width: 100%;
+    }
+    .popup button {
+        width: 20%; /* Full-width button on mobile */
+        padding: 12px; /* Increase padding for better touch experience */
+        font-size: 18px; /* Increase font size for readability */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em; /* Even smaller for very small screens */
+    }
+    
+    h2, h3, h4 {
+        font-size: 1.2em; /* Smaller headings */
+    }
+
+    section p {
+        font-size: 0.9em; /* Smaller paragraph text */
+    }
+
+    .ari {
+        padding: 10px; /* Further reduced padding */
+    }
+
+    .ari p {
+        display: inline; /* Change display to inline to combine text */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Existing styles... */
+    
+    .about {
+        padding: 15px; /* Reduce padding for mobile */
+        text-align: right; /* Ensure right alignment remains */
+    }
+
+    .about p {
+        font-size: 1em; /* Smaller font size for paragraphs */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Existing styles... */
+
+    .about {
+        padding: 10px; /* Further reduced padding */
+        text-align: right; /* Ensure right alignment remains */
+    }
+
+    .about p {
+        font-size: 0.9em; /* Even smaller font size for paragraphs */
+    }
+}
+
+@media (max-width: 768px) {
+    #gift-box {
+        margin: 0 auto; /* Center for mobile */
+        padding-bottom: 5%; /* Reduced padding for smaller screens */
+    }
+
+    .popup {
+        width: 80%; /* Adjust width for mobile */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .popup button {
+        font-size: 14px; /* Adjust button font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .popup {
+        width: 90%; /* Further reduce width on very small screens */
+        padding: 10px; /* Further reduced padding */
+    }
+
+    .popup button {
+        font-size: 12px; /* Smaller button font size */
+    }
+}

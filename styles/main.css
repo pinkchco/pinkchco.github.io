@@ -1,0 +1,212 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #e9f7fd; 
+    background-image: linear-gradient(rgba(228, 246, 255, 0.1), rgba(228, 246, 255, 0.1)), url('../img/abang.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: overlay;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    opacity: 0; 
+    transform: translateY(20px);
+    animation: fadeInContainer 0.5s ease-out forwards;
+}
+
+@keyframes fadeInContainer {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    opacity: 0; /* Awal dalam keadaan transparan */
+    transform: translateY(-30px); /* Mulai dari posisi sedikit ke atas */
+    animation: fadeInOrder 0.8s 1s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.love-icon {
+    position: absolute;
+    top: -12%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    color: pink;
+    opacity: 0; 
+    transform: translateY(-30px);
+    animation: fadeInOrder 0.8s 0.5s ease-out forwards, rotate-icon 2s linear infinite;
+}
+
+@keyframes rotate-icon {
+    0% {
+      transform: translateX(-50%) rotateY(0deg); /* Mulai dari posisi normal */
+    }
+    50% {
+      transform: translateX(-50%) rotateY(180deg); /* Rotasi ke arah belakang */
+    }
+    100% {
+      transform: translateX(-50%) rotateY(360deg); /* Kembali ke posisi awal */
+    }
+}
+
+p {
+    font-size: 18px;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    margin-left: 7%;
+    margin-right: 7%;
+    line-height: 30px;
+    opacity: 0; /* Awal dalam keadaan transparan */
+    transform: translateY(-30px); /* Mulai dari posisi sedikit ke atas */
+    animation: fadeInOrder 0.8s 1.5s ease-out forwards;
+}
+
+
+@keyframes fadeInOrder {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px); /* Mulai dari atas */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Menuju posisi normal */
+    }
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #1c86c8;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: inline-block;
+    letter-spacing: 2px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Pastikan transform ada di sini */
+    box-shadow: 0 0 30px rgb(236, 0, 153);
+    transform: translateY(-30px);
+    opacity: 0;
+    animation: fadeInOrder 0.8s 2s ease-out forwards, flicker 1.5s infinite;
+}
+
+.btn:hover {
+    background-color: #ff2cab;
+    transform: translateY(-5px) !important;
+    box-shadow: 0 0 40px rgb(236, 0, 153);
+}
+
+
+@keyframes flicker {
+    0% {
+        box-shadow: 0 0 10px rgb(236, 0, 153);
+    }
+    50% {
+        box-shadow: 0 0 30px rgb(236, 0, 153);
+    }
+    100% {
+        box-shadow: 0 0 10px rgb(236, 0, 153);
+    }
+}
+
+/* Confetti animation */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ffcc00;
+    animation: confetti-animation 3s ease-out forwards;
+    border-radius: 50%;
+    bottom: 0;
+}
+
+@keyframes confetti-animation {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, -100vh);
+        opacity: 0;
+    }
+}
+
+
+@media (max-width: 768px) {
+    body {
+        height: auto; /* Ubah tinggi untuk tampilan mobile */
+        justify-content: center; /* Tetap di tengah */
+    }
+
+    h1 {
+        font-size: 28px;
+        line-height: 1.2;
+        margin-top: 100px;
+    }
+
+    p {
+        font-size: 14px;
+        margin: 5px;
+        line-height: 22px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .love-icon {
+        top: 7%; /* Mengubah posisi top untuk tampilan mobile */
+        font-size: 40px;
+    }
+}
+
+/* Aturan untuk tampilan sangat kecil */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+        margin-top: 80px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .love-icon {
+        top: 4%; /* Posisi lebih tinggi di tampilan yang lebih kecil */
+        font-size: 30px;
+    }
+}
