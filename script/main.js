@@ -29,6 +29,23 @@
       document.getElementById("popup").style.display = "none";
       document.getElementById("popup-overlay").style.display = "none";
     }
+  
+    // Efek parallax saat scroll
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.header');
+      const overlay = document.querySelector('.overlay');
+      
+      const scrollPosition = window.scrollY;
+  
+      // Saat scroll mencapai titik tertentu, tambahkan animasi fade-in
+      if (scrollPosition > 50) {
+          overlay.style.opacity = '1';
+          overlay.style.transform = 'translateY(0)';
+      } else {
+          overlay.style.opacity = '0';
+          overlay.style.transform = 'translateY(-20px)';
+      }
+  });
 
   // Fungsi untuk mengganti gambar saat layar lebih kecil dari 768px
 function updateImageSrc() {
@@ -46,23 +63,6 @@ updateImageSrc();
 // Panggil fungsi setiap kali ukuran layar berubah
 window.addEventListener('resize', updateImageSrc);
 
-    // Efek parallax saat scroll
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('.header');
-      const overlay = document.querySelector('.overlay');
-      
-      const scrollPosition = window.scrollY;
-  
-      // Saat scroll mencapai titik tertentu, tambahkan animasi fade-in
-      if (scrollPosition > 50) {
-          overlay.style.opacity = '1';
-          overlay.style.transform = 'translateY(0)';
-      } else {
-          overlay.style.opacity = '0';
-          overlay.style.transform = 'translateY(-20px)';
-      }
-  });
-  
 
 
 // Deteksi saat elemen muncul di viewport
