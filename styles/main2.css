@@ -116,6 +116,7 @@ p {
     left: -2%;
     right: 0; /* Memastikan SVG mengisi seluruh lebar */
     z-index: 0;
+    background-image: url("img/wave.svg");
 }
 
 .about-image {
@@ -442,20 +443,30 @@ footer svg {
         font-size: 2em; /* Smaller font size for h1 */
     }
     
-    h2, h3, h4 {
+    h2, h3{
         font-size: 1.5em; /* Smaller font sizes for headings */
+    }
+
+    h4 {
+        font-size: 1em;
     }
     
     .about img{
-        overflow-x: hidden;
+        overflow: hidden;
+        margin-top: -2.5%;
+        background-image: url("img/wiv.svg");
+        max-width: 110%; /* Ensure the image doesn't exceed its container */
         height: auto;
-        margin-top:-2.5%;
     }
 
     .about-image img {
-        width: 100px; /* Smaller images for mobile */
+        width: 110px; /* Smaller images for mobile */
     }
     
+    #head {
+        margin-top: -10px;
+    }
+
     .ari {
         margin-top:100px; 
         padding: 20px; /* Reduced padding */
@@ -548,6 +559,7 @@ footer svg {
     .about {
         padding: 10px; /* Further reduced padding */
         text-align: right; /* Ensure right alignment remains */
+        background-image: url("img/wiv.svg");
     }
 
     .about p {
