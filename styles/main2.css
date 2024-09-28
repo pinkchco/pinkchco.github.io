@@ -512,7 +512,7 @@ footer svg {
         width: 100%;
     }
     .popup button {
-        width: 20%; /* Full-width button on mobile */
+        width: 40%; /* Full-width button on mobile */
         padding: 12px; /* Increase padding for better touch experience */
         font-size: 18px; /* Increase font size for readability */
     }
