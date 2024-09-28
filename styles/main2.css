@@ -455,7 +455,8 @@ footer svg {
         overflow: hidden;
         margin-top: -2.5%;
         background-image: url("img/wiv.svg");
-        max-width: 110%; /* Ensure the image doesn't exceed its container */
+        width: 780px;
+        max-width: 100%; /* Ensure the image doesn't exceed its container */
         height: auto;
     }
 
